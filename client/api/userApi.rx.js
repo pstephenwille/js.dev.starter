@@ -1,20 +1,17 @@
 import {load} from './restApi.rx';
-import 'rxjs/add/operator/map';
 
-export function getUsers() {
+export const getUsers = ()=> {
     /* transform data here */
-    return load('get', 'users').map(items => {
-        "use strict";
-        return items.map(transformUser);
-    });
-}
+    return load('get', 'users').map(transformUser);
+};
 
-export function deleteUser(id) {
+export const deleteUser = id => {
     return load('delete', `users/${id}`);
-}
+};
 
-
-function transformUser(user) {
-    user.woot = 'transformed prop';
-    return user;
-}
+const transformUser = users =>{
+    return users.map((user, index) => {
+        user.woot = `transformed prop ${index}`;
+        return user;
+    });
+};

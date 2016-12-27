@@ -7,11 +7,12 @@ export default {
     noInfo: false,
     entry: [
         /* List of module files to bundle.
-         * Defaults ./index.js */
-        path.resolve(__dirname, 'client/users/users')
+         * Defaults ./user.app.js */
+        path.resolve(__dirname, 'client/users/index.js')
     ],
     target: 'web',
     output: {
+        library: 'Redux',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
         filename: 'bundle.js'
@@ -25,8 +26,12 @@ export default {
     ],
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
-            {test: /\.css$/, loaders: ['style', 'css']}
+            {test: /\.js$/, loaders: ['babel'], exclude: /node_modules/},
+            {test: /\.css$/, loaders: ['style', 'css']},
+            {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file"},
+            {test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000"},
+            {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream"},
+            {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml"}
         ]
     }
 }

@@ -8,7 +8,7 @@
   For examples of using it with htmlWebpackPlugin,
   see https://github.com/jaketrent/html-webpack-template/blob/master/index.ejs
   -->
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!--
@@ -17,15 +17,16 @@
    -->
     <% if (htmlWebpackPlugin.options.trackJSToken) { %>
     <!-- BEGIN TRACKJS -->
-    <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
+    <script type="text/javascript">window._trackJs = {token: '<%=htmlWebpackPlugin.options.trackJSToken%>'};</script>
     <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
     <!-- END TRACKJS -->
     <% } %>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 </head>
 <body>
-  <h1>Users</h1>
-  <div id="users"></div>
+    <h1>Users</h1>
+    <div id="users"></div>
+    <!--<div id="app"></div>-->
 
 </body>
 </html>

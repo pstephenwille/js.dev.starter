@@ -13,7 +13,7 @@ import chalk from 'chalk';
 
 const json = JSON.stringify(jsf(schema));
 
-fs.writeFile("./client/api/db.json", json, function (err) {
+fs.writeFile("./client/api/users.db.json", json, function (err) {
   if (err) {
     return console.log(chalk.red(err));
   } else {
