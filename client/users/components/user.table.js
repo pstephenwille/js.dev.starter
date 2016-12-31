@@ -1,33 +1,27 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import User from './user.row';
+import User from './user.row.html';
 import {loadUsers} from '../actions/user.actions';
+import UserTableHtml from './user.table.html';
 
 /* view component */
 class UserTable extends React.Component {
-    // constructor(props, context) {
-    //     super(props, context);
-    // };
+    constructor(props, context) {
+        super(props, context);
+        // this.deleteUser = this.deleteUser.bind(this);
+    };
+/*
+    deleteUser(e, id){
+        // e.preventDefault();
+        /!*dispatch delete action *!/
+        console.log('...deleteuser ', id);
+    };*/
 
     render() {
         const {users} = this.props;
         return (
-            <table>
-                <thead>
-                <tr>
-                    <th>&nbsp;</th>
-                    <th>Id</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Woot</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {users.map(user => <User key={user.id} user={user}/> )}
-                </tbody>
-            </table>
+            <UserTableHtml users={users} />
         )
     };
 };

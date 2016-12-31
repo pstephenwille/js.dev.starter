@@ -8,3 +8,13 @@ export const users = (state = [], action) => {
             return state;
     }
 };
+
+export const deleteUser = (state = [], action) =>{
+    switch(action.type) {
+        case 'DELETE_USER':
+            console.log('......yup');
+            return [action.users];
+        default:
+            return state;
+    }
+}
