@@ -1,0 +1,11 @@
+const BEGIN_REQ = 'BEGIN_REQUEST';
+const REQ_ERROR = 'REQUEST_ERROR';
+const GET_ALL_USERS = 'GET_ALL_USERS';
+const DELETE_USER = 'DELETE_USER';
+
+export const types = {
+    BEGIN_REQ,
+    REQ_ERROR,
+    GET_ALL_USERS,
+    DELETE_USER
+};

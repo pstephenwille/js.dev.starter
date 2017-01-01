@@ -43,3 +43,7 @@ db.json
 
 # dist folder
 dist
+
+
+#app files
+users.db.json

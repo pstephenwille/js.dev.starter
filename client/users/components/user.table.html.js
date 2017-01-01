@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import UserRowHtml from './user.row.html';
-import {loadUsers} from '../actions/user.actions';
+import {loadUsers} from '../actions/user.action.load.users';
 
 /* view component */
 const UserTableHtml = ({users}) => {

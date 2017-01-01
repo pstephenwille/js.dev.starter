@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import { connect } from 'react-redux'
-import { deleteUser } from '../actions/user.actions';
+import { deleteUser } from '../actions/user.action.delete.user';
 
 const UserRowHtml = ({user, dispatch}) => {
     return (
