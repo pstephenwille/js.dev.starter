@@ -9,29 +9,29 @@ import UserTableHtml from './user.table.html';
 class UserTable extends React.Component {
     constructor(props, context) {
         super(props, context);
-        // this.deleteUser = this.deleteUser.bind(this);
     };
-/*
-    deleteUser(e, id){
-        // e.preventDefault();
-        /!*dispatch delete action *!/
-        console.log('...deleteuser ', id);
-    };*/
 
     render() {
-        const {users} = this.props;
+        const {users, loading} = this.props;
+
         return (
-            <UserTableHtml users={users} />
-        )
+            <div>
+                {loading && <h1>Loading</h1>}
+                <UserTableHtml users={users}/>
+            </div>
+         )
     };
-};
+}
+
 
 UserTable.propTypes = {
-    users: PropTypes.array.isRequired
+    users: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state, ownProps) /* components own props */ {
     return {
+        loading: state.requestsInProgress > 0,
         users: state.users/* name of reducer */
     };
 };

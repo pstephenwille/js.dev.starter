@@ -40,6 +40,7 @@
     "toastr": "2"
   },
   "devDependencies": {
+    "@kwonoj/rxjs-testscheduler-compat": "0.0.4",
     "babel-cli": "6.16.0",
     "babel-core": "6.17.0",
     "babel-loader": "6.2.5",
@@ -79,6 +80,7 @@
     "redux-immutable-state-invariant": "1.2.4",
     "redux-mock-store": "1.2.1",
     "rimraf": "2.5.4",
+    "sinon": "^1.17.7",
     "style-loader": "0.13.1",
     "surge": "0.18.0",
     "testdouble": "^1.10.2",

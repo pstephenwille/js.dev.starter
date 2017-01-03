@@ -4,7 +4,8 @@ import 'rxjs/add/operator/toPromise';
 
 import {types}  from './action.types';
 import * as api from '../../api/userApi.rx';
-import {loadUsers} from './user.action.load.users'
+// import {loadUsers} from './user.action.load.users'
+import {ua} from './index'
 
 export const deleteUser = (id) => {
     return handleDelete.bind(null, id);
@@ -13,10 +14,10 @@ export const deleteUser = (id) => {
 const handleDelete = (id, dispatch) => {
     api.deleteUser(id).subscribe(
         data => {
-            dispatch(loadUsers())
+            dispatch(ua.loadUsers())
         },
         error => console.log('del user error ', error)
     )
 };
-const deleteUserSuccess = (id) => ({type: types.DELETE_USER, id: id});
+// const deleteUserSuccess = (id) => ({type: types.DELETE_USER, id: id});
 

@@ -9,8 +9,8 @@ const baseUrl = getBaseUrl();
 
 export function load(method, userUrl) {
     return Observable.create(observer => {
+        console.log('......xhr');
         let xhr = new XMLHttpRequest();
-
         let onLoad = () => {
             if(xhr.status === 200) {
                 let data = JSON.parse(xhr.responseText);
@@ -31,7 +31,7 @@ export function load(method, userUrl) {
             xhr.abort();
         }
 
-    }).retryWhen(retryStrategy({attempts: 3, delay: 500}));
+    }).retryWhen(retryStrategy({attempts: 3, delay: 500})).delay(1000);
 }
 
 function retryStrategy({attempts = 2, delay = 1000} = {}) {

@@ -13,7 +13,7 @@ export const users = (state = [], action) => {
 export const deleteUser = (state = [], action) =>{
     switch(action.type) {
         case types.DELETE_USER:
-            return [action.users];
+            return action.users;
         default:
             return state;
     }

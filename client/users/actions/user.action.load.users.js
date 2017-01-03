@@ -4,14 +4,24 @@ import 'rxjs/add/operator/toPromise';
 
 import {types}  from './action.types';
 import * as api from '../../api/userApi.rx';
+import {beginRequest, requestError, requestComplete} from './user.action.request.status';
 
 export const loadUsers = () => {
+    console.log('....ua.loadusers');
     return handleLoadUsers;
 };
 const handleLoadUsers = (dispatch) => {
+    dispatch(beginRequest());
+
     api.getUsers().subscribe(
-        data => dispatch(loadUsersSuccess(data)),
-        error => console.log('...loadUsers error ', error)
+        data => {
+            console.log('.....api.getusers');
+            dispatch(requestComplete());
+            dispatch(loadUsersSuccess(data))
+        },
+        error => {
+            dispatch(requestError());
+            console.log('...loadUsers error ', error)}
     );
 };
 

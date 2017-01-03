@@ -40,10 +40,8 @@ jspm_packages
 
 # mock db file
 db.json
+users.db.json
 
 # dist folder
 dist
 
-
-#app files
-users.db.json

@@ -1,9 +1,11 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import {users, deleteUser} from './user.reducer';
+import requestsInProgress from './request.status.reducer';
 
 const rootReducer = combineReducers({
     users,
-    deleteUser
+    deleteUser,
+    requestsInProgress
 });
 
 export default rootReducer;
