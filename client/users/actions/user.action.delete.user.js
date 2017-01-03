@@ -2,9 +2,7 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
-import {types}  from './action.types';
 import * as api from '../../api/userApi.rx';
-// import {loadUsers} from './user.action.load.users'
 import {ua} from './index'
 
 export const deleteUser = (id) => {
@@ -19,5 +17,4 @@ const handleDelete = (id, dispatch) => {
         error => console.log('del user error ', error)
     )
 };
-// const deleteUserSuccess = (id) => ({type: types.DELETE_USER, id: id});
 
